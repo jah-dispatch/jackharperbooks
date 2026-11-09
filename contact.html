@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Jack Harper MM Romance</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/scheme-winter.css">
+</head>
+<body>
+
+  <!-- Sticky Responsive Header Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo1.png" alt="Jack Harper Logo">
+    </a>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="jackharper.html">About</a></li>
+      <li><a href="releases.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <main style="max-width: 600px; margin: 3rem auto; padding: 0 1rem;">
+    <h1>Get in Touch</h1>
+    <p style="margin-bottom: 1.5rem;">Have a question, feedback, or a note for Jack? Send a message directly below.</p>
+    
+    <!-- FORMSPREE FORM: Replace YOUR_FORM_ID with your Formspree endpoint string -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+      <label>
+        Your Name:
+        <input type="text" name="name" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+      </label>
+      <label>
+        Your Email:
+        <input type="email" name="_replyto" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+      </label>
+      <label>
+        Message:
+        <textarea name="message" rows="5" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;"></textarea>
+      </label>
+      <button type="submit" class="hero-action-btn" style="position: static; transform: none; cursor: pointer;">Send Message</button>
+    </form>
+  </main>
+
+  <!-- Hardcoded Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jack Harper. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/snow.js"></script>
+</body>
+</html>

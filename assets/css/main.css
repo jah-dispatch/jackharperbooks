@@ -380,3 +380,50 @@ h1, h2, h3, h4 {
 .hero-action-btn:hover {
   background-color: var(--btn-hover, #0369a1);
 }
+/* Bio Page Grid Layout */
+.bio-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+.bio-image-wrapper {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.bio-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3; /* Maintains exact 2:3 portrait proportion */
+  object-fit: cover;
+  display: block;
+}
+
+.bio-text p {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* Bio Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .bio-text {
+    text-align: left;
+  }
+}
