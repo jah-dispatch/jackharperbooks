@@ -72,5 +72,21 @@
 
   <!-- Non-intrusive Snow Animation Script -->
   <script src="js/snow.js"></script>
+  <!-- Back to Top Floating Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    &#8679;
+  </button>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+  </script>
+</body>
 </body>
 </html>
