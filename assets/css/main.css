@@ -427,3 +427,341 @@ h1, h2, h3, h4 {
     text-align: left;
   }
 }
+/* Base Layout & Typography */
+:root {
+  --font-heading: 'Unkempt', cursive;
+  --font-body: 'Old Standard TT', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+/* STICKY HEADER & MARQUEE WRAPPER */
+.header-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Scrolling Announcement Marquee */
+.marquee-bar {
+  background: rgba(12, 74, 110, 0.9);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.4rem 0;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #fcee33;
+  backdrop-filter: blur(8px);
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding-right: 3rem;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Centered Navbar Layout */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--nav-bg, rgba(15, 23, 42, 0.95));
+  border-bottom: 1px solid var(--nav-border, rgba(56, 189, 248, 0.2));
+  gap: 0.75rem;
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.25rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--nav-text, #e2e8f0);
+  border-radius: 2px;
+}
+
+/* HERO CAROUSEL STYLES */
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-slide.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  display: block;
+  object-fit: contain;
+}
+
+.hero-action-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.8rem 2rem;
+  background-color: var(--btn-bg, #0284c7);
+  color: var(--btn-text, #ffffff);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.hero-action-btn:hover {
+  background-color: var(--btn-hover, #0369a1);
+  transform: translateX(-50%) scale(1.03);
+}
+
+/* Carousel Arrow Navigation Controls */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #f8fafc;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-arrow:hover {
+  background: rgba(56, 189, 248, 0.3);
+  border-color: #38bdf8;
+}
+
+.prev-arrow { left: 1rem; }
+.next-arrow { right: 1rem; }
+
+/* Carousel Indicator Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 20;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background: #38bdf8;
+  transform: scale(1.2);
+}
+
+/* Footer Styling */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  margin-top: 3rem;
+  border-top: 1px solid var(--nav-border);
+}
+
+/* Bio Page Grid Layout */
+.bio-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+.bio-image-wrapper {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.bio-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.bio-text p {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .hamburger {
+    display: flex;
+    position: static;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--nav-bg, #1e293b);
+    padding: 1.5rem 0;
+    text-align: center;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--nav-border, #334155);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  
+  .prev-arrow { left: 0.5rem; }
+  .next-arrow { right: 0.5rem; }
+
+  .hero-action-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    bottom: 8%;
+  }
+
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .bio-text {
+    text-align: left;
+  }
+}

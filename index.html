@@ -16,28 +16,78 @@
 </head>
 <body>
 
-  <!-- Sticky Responsive Header Navigation -->
-  <header class="navbar">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo1.png" alt="Jack Harper Logo">
-    </a>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- Sticky Wrapper containing both Marquee and Navbar -->
+  <div class="header-sticky-wrapper">
+    <!-- Announcement Marquee Bar -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span>✨ NEW RELEASE: <em>Hemingway Falls</em> Coming in 2027!! &nbsp;&bull;&nbsp; Standalone MM Romance &nbsp;&bull;&nbsp; Exclusive Excerpts &amp; Backlist Titles Coming Back Online Soon! &nbsp;&bull;&nbsp; Welcome to the New Author Site ✨</span>
+        <span>✨ NEW RELEASE: <em>Hemingway Falls</em> Coming in 2027!! &nbsp;&bull;&nbsp; Standalone MM Romance &nbsp;&bull;&nbsp; Exclusive Excerpts &amp; Backlist Titles Coming Back Online Soon! &nbsp;&bull;&nbsp; Welcome to the New Author Site ✨</span>
+      </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="jackharper.html" class="shimmer-nav-1">About</a></li>
-      <li><a href="releases.html" class="shimmer-nav-2">Books</a></li>
-      <li><a href="contact.html" class="shimmer-nav-1">Contact</a></li>
-    </ul>
-  </header>
 
-  <!-- Hero Section with Scrollable/Responsive Image -->
+    <!-- Responsive Navigation -->
+    <header class="navbar">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-jh.png" alt="Jack Harper Logo">
+      </a>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="jackharper.html" class="shimmer-nav-1">About</a></li>
+        <li><a href="releases.html" class="shimmer-nav-2">Books</a></li>
+        <li><a href="contact.html" class="shimmer-nav-1">Contact</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- Hero Carousel Container -->
   <section class="hero-container">
-    <div class="hero-slide">
-      <img src="assets/images/hero-image-hemingway-falls.png" alt="Jack Harper Hero Banner">
-      <a href="releases.html" class="hero-action-btn">Explore Standalone Romances</a>
+    <div class="hero-carousel">
+      
+      <!-- Slide 1: Hemingway Falls -->
+      <div class="hero-slide active">
+        <img src="assets/images/hero-image-hemingway-falls.png" alt="Hemingway Falls Hero Banner">
+        <a href="releases.html" class="hero-action-btn">Explore Standalone Romances</a>
+      </div>
+
+      <!-- Slide 2: Backlist / Placeholder Banner -->
+      <div class="hero-slide">
+        <img src="assets/images/hero-dbh.png" alt="Jack Harper - Distance Between Him" onerror="this.src='https://via.placeholder.com/1400x550/0f172a/38bdf8?text=Jack+Harper+Bibliography+Collection'">
+        <a href="releases.html" class="hero-action-btn">Discover the Full Backlist</a>
+      </div>
+
+      <!-- Slide 2: Backlist / Placeholder Banner -->
+      <div class="hero-slide">
+        <img src="assets/images/hero-sot.png" alt="Jack Harper - Sands of Time" onerror="this.src='https://via.placeholder.com/1400x550/0f172a/38bdf8?text=Jack+Harper+Bibliography+Collection'">
+        <a href="releases.html" class="hero-action-btn">Discover the Full Backlist</a>
+      </div>
+
+      <!-- Slide 2: Backlist / Placeholder Banner -->
+      <div class="hero-slide">
+        <img src="assets/images/hero-harts-inferno.png" alt="Jack Harper - Hart's Inferno" onerror="this.src='https://via.placeholder.com/1400x550/0f172a/38bdf8?text=Jack+Harper+Bibliography+Collection'">
+        <a href="releases.html" class="hero-action-btn">Discover the Full Backlist</a>
+      </div>
+
+      <!-- Slide 2: Backlist / Placeholder Banner -->
+      <div class="hero-slide">
+        <img src="assets/images/hero-chips.png" alt="Jack Harper - ...and a Bag of Chips" onerror="this.src='https://via.placeholder.com/1400x550/0f172a/38bdf8?text=Jack+Harper+Bibliography+Collection'">
+        <a href="releases.html" class="hero-action-btn">Discover the Full Backlist</a>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls (Arrows) -->
+    <button class="carousel-arrow prev-arrow" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
+    <button class="carousel-arrow next-arrow" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
+
+    <!-- Carousel Dots -->
+    <div class="carousel-dots">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
     </div>
   </section>
 
@@ -68,5 +118,49 @@
 
   <!-- Non-intrusive Snow Animation Script -->
   <script src="js/snow.js"></script>
+
+  <!-- Hero Carousel Controller (7-second timer) -->
+  <script>
+    let slideIndex = 0;
+    let slideTimer;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      else if (index < 0) slideIndex = slides.length - 1;
+      else slideIndex = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (dots[i]) dots[i].classList.remove('active');
+      });
+
+      slides[slideIndex].classList.add('active');
+      if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+
+      resetTimer();
+    }
+
+    function changeSlide(direction) {
+      showSlide(slideIndex + direction);
+    }
+
+    function currentSlide(index) {
+      showSlide(index);
+    }
+
+    function resetTimer() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(() => {
+        showSlide(slideIndex + 1);
+      }, 7000); // 7 Seconds Auto-Cycle
+    }
+
+    // Initialize carousel on load
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(0);
+    });
+  </script>
 </body>
 </html>
