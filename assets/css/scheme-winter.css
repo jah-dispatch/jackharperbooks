@@ -1,0 +1,109 @@
+/* Winter Gradient & Theme Overrides */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c4a6e 100%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.intro-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 1.5rem auto 3rem auto;
+  color: #cbd5e1;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.info-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.info-card p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+/* Gold and Silver Shimmer Text Effects */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Nav Shimmer Pattern A (Starts Silver, moves to Gold) */
+.shimmer-nav-1 {
+  background: linear-gradient(90deg, #cbd5e1 0%, #fef08a 25%, #e2e8f0 50%, #ca8a04 75%, #cbd5e1 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Nav Shimmer Pattern B (Staggered offset - starts Gold, moves to Silver) */
+.shimmer-nav-2 {
+  background: linear-gradient(90deg, #ca8a04 0%, #e2e8f0 25%, #fef08a 50%, #cbd5e1 75%, #ca8a04 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Headers Inverted Shimmer Pattern A */
+.shimmer-header-1 {
+  background: linear-gradient(90deg, #fef08a 0%, #cbd5e1 30%, #ca8a04 60%, #e2e8f0 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+  font-size: 2.5rem;
+}
+
+/* Headers Inverted Shimmer Pattern B */
+.shimmer-header-2 {
+  background: linear-gradient(90deg, #e2e8f0 0%, #ca8a04 35%, #fef08a 70%, #cbd5e1 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+  font-size: 1.8rem;
+}
+/* Winter Gradient & Base Overlay Stack */
+body {
+  position: relative; /* Establishes a clean stacking context */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0c4a6e 100%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* Ensure Snow Canvas Stays Above Background & Layout */
+#snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Allows all clicks to pass through seamlessly */
+  z-index: 99999;       /* Elevates snow above all text, cards, and backgrounds */
+}
