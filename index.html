@@ -183,6 +183,46 @@
       }
     });
   </script>
+  <!-- Floating Radio Trigger Button -->
+  <button id="radioToggle" class="radio-floating-btn" aria-label="Toggle Radio Player">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(90deg);">
+      <path d="M9 18V5l12-2v13M9 9l12-2M6 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+    Listen to Jack FM
+  </button>
+
+  <!-- Slide-out Radio Drawer Modal -->
+  <div id="radioDrawer" class="radio-drawer">
+    <div class="radio-drawer-header">
+      <h4>Jack FM Radio</h4>
+      <button id="radioClose" class="radio-close-btn" aria-label="Close Radio Drawer">&times;</button>
+    </div>
+    <div class="radio-player-container">
+      <iframe src="https://tunein.com/embed/player/s320825/" style="width:100%; height:100px;" scrolling="no" frameborder="no"></iframe>
+    </div>
+  </div>
+  <script>
+    const radioToggle = document.getElementById('radioToggle');
+    const radioDrawer = document.getElementById('radioDrawer');
+    const radioClose = document.getElementById('radioClose');
+
+    // Toggle drawer open/close
+    radioToggle.addEventListener('click', () => {
+      radioDrawer.classList.toggle('open');
+    });
+
+    radioClose.addEventListener('click', () => {
+      radioDrawer.classList.remove('open');
+    });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!radioDrawer.contains(event.target) && !radioToggle.contains(event.target)) {
+        radioDrawer.classList.remove('open');
+      }
+    });
+  </script>
+
 </body>
 </body>
 </html>

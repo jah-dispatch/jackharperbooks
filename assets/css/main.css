@@ -851,3 +851,87 @@ h1, h2, h3, h4 {
   border-color: #38bdf8;
   transform: translateY(-3px);
 }
+/* Floating Radio Trigger Button (Left Side) */
+.radio-floating-btn {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  color: hsl(49, 93%, 53%);
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.radio-floating-btn:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #f8fafc;
+  padding-left: 0.75rem;
+}
+
+/* Radio Player Slide-out Drawer */
+.radio-drawer {
+  position: fixed;
+  left: -340px; /* Hidden off-screen by default */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  z-index: 1001;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-left: none;
+  border-radius: 0 16px 16px 0;
+  padding: 1.25rem;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radio-drawer.open {
+  left: 0; /* Slide into view */
+}
+
+.radio-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.radio-drawer-header h4 {
+  margin: 0;
+  font-family: 'Old Standard TT', serif;
+  color: #5d98f1;
+  font-size: 1.1rem;
+}
+
+.radio-close-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.radio-close-btn:hover {
+  color: #f0e001;
+}
