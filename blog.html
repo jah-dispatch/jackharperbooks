@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author Dispatches & Blog | Jack Harper</title>
+  
+  <!-- Google Fonts: Old Standard TT, Unkempt, and Courier Prime (Typewriter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets (Season-Independent Blog Theme) -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/blog-theme.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-jh.png" alt="Jack Harper Logo">
+    </a>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="jackharper.html" class="shimmer-nav-1">About</a></li>
+      <li><a href="releases.html" class="shimmer-nav-2">Books</a></li>
+      <li><a href="blog.html" class="shimmer-nav-1">Blog</a></li>
+      <li><a href="contact.html" class="shimmer-nav-2">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Main Content / Paginated Bento Grid -->
+  <main class="main-content">
+    <h1 class="shimmer-header-1">The Typewriter Dispatches</h1>
+    <p class="blog-subtitle">Notes from the Desk, Story Craft & Behind-the-Scenes Updates</p>
+
+    <!-- 
+      HOW TO ADD NEW BLOG POSTS:
+      Paste each new <article class="bento-card blog-paper-card"> right at the TOP of #blogBentoGrid.
+      The JavaScript pagination automatically groups cards into pages of 5 (1 full-width lead + 4 half-width cards).
+    -->
+
+    <!-- Ethical Image Disclaimer Tooltip (Sits neatly above the Bento Grid) -->
+    <div class="blog-grid-toolbar">
+      <div class="disclaimer-tooltip-wrap" id="aiDisclaimerWrap">
+        <button 
+          type="button" 
+          class="disclaimer-trigger" 
+          aria-expanded="false"
+          aria-controls="aiDisclaimerBox"
+          onclick="const w = document.getElementById('aiDisclaimerWrap'); const isOpen = w.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen);"
+        >
+          &#9432; Artwork Note
+        </button>
+        <div id="aiDisclaimerBox" class="disclaimer-popover" role="tooltip">
+          <strong>Ethical Artwork Disclaimer</strong>
+          Header illustrations for this blog are created using ethically sourced AI tools via Adobe Firefly, which is trained exclusively on licensed Adobe Stock and public-domain content rather than scraped external professional art or photography.
+        </div>
+      </div>
+    </div>
+
+    <div id="blogBentoGrid" class="bento-container">
+
+      <!-- PRE-FILLED PLACEHOLDER 1 (Newest - Links to /blog/posts/2026/11-15.html) -->
+      <article class="bento-card blog-paper-card">
+        <a href="blog/posts/2026/11-14.html">
+          <img src="blog/posts/hero/2026-11-15.png" alt="Dispatch #02 Hero" class="card-hero-thumb" onerror="this.src='assets/images/HemingwayFalls_CoverFINAL.jpg'">
+        </a>
+        <div style="display: flex; flex-direction: column; height: 100%;">
+          <div class="post-meta">
+            <span>DATE: NOV 15, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: CRAFT &amp; TIMELINES</span>
+          </div>
+          <h2>Chasing Ghosts Across Timelines in Hemingway Falls</h2>
+          <p class="preview-excerpt">
+            Deep within the misty Douglas-firs outside Seattle, an abandoned cabin holds a secret left behind in a cast-copper mailbox. When I first sat down to plan <em>Hemingway Falls</em>, I knew the story...
+          </p>
+          <a href="blog/posts/2026/11-14.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+        </div>
+      </article>
+
+      <!-- PRE-FILLED PLACEHOLDER 2 (Links to /blog/posts/2026/11-01.html) 
+      <article class="bento-card blog-paper-card">
+        <a href="blog/posts/2026/11-01.html">
+          <img src="blog/posts/hero/2026-11-01.png" alt="Dispatch #01 Hero" class="card-hero-thumb" onerror="this.src='assets/images/distance-between-him.jpg'">
+        </a>
+        <div style="display: flex; flex-direction: column; height: 100%;">
+          <div class="post-meta">
+            <span>DATE: NOV 15, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: AUTHOR DESK</span>
+          </div>
+          <h3>Welcome to the New Typewriter Archive</h3>
+          <p class="preview-excerpt">
+            Pulling up a chair to a permanent corner of the site where seasons don't change the ink. Here is what I am working on this month, upcoming book news, and why I wanted a dedicated journal space...
+          </p>
+          <a href="blog/posts/2026/11-01.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+        </div>
+      </article>
+
+      <article class="bento-card blog-paper-card">
+        <div>
+          <div class="post-meta">
+            <span>DATE: OCT 18, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: CHARACTER NOTES</span>
+          </div>
+          <h3>Writing High-Angst Recovery Without Losing Hope</h3>
+          <p class="preview-excerpt">
+            When drafting Orson and Dante in Hart's Inferno, balancing raw emotional realism with the warmth of found safety required walking a deliberate tightrope in every chapter...
+          </p>
+        </div>
+        <a href="blog/posts/2026/11-01.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+      </article>
+
+      <article class="bento-card blog-paper-card">
+        <div>
+          <div class="post-meta">
+            <span>DATE: OCT 04, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: BEHIND THE SCENES</span>
+          </div>
+          <h3>Soundtracks for Late-Night Revisions</h3>
+          <p class="preview-excerpt">
+            Every manuscript carries its own rhythm. From ambient rain tracks to vintage radio broadcasts, here are the playlists that shaped my recent releases...
+          </p>
+        </div>
+        <a href="blog/posts/2026/11-01.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+      </article>
+
+      <article class="bento-card blog-paper-card">
+        <div>
+          <div class="post-meta">
+            <span>DATE: SEP 19, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: STORY ORIGINS</span>
+          </div>
+          <h3>Why Southern Gothic Roots Linger in Distance Between Him</h3>
+          <p class="preview-excerpt">
+            Leaving a small hometown never quite erases its echoes. Exploring how Grayson's return to rural Louisiana shaped the emotional backbone of the novel...
+          </p>
+        </div>
+        <a href="blog/posts/2026/11-01.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+      </article>
+
+      <article class="bento-card blog-paper-card">
+        <div>
+          <div class="post-meta">
+            <span>DATE: SEP 02, 2026</span>
+            <span>&bull;</span>
+            <span>FILED UNDER: ARCHIVE TEST</span>
+          </div>
+          <h2>From Comedy to Catharsis in ...and a Bag of Chips</h2>
+          <p class="preview-excerpt">
+            This sixth placeholder entry sits on Page 2 so you can test the 5-entry pagination logic right out of the box. Delete Demo Cards 3–6 whenever you are ready!
+          </p>
+        </div>
+        <a href="blog/posts/2026/11-01.html" class="read-more-btn">Read Full Dispatch &rarr;</a>
+      </article>
+      
+
+    </div>
+
+    <!-- Pagination Controls Container -->
+    <nav id="blogPagination" class="pagination-bar" aria-label="Blog Pagination"></nav>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jack Harper. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    &#8679;
+  </button>
+
+  <!-- Bento Grid 5-Item Pagination & Scroll Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ITEMS_PER_PAGE = 5;
+      const grid = document.getElementById('blogBentoGrid');
+      const cards = Array.from(grid.querySelectorAll('.blog-paper-card'));
+      const paginationContainer = document.getElementById('blogPagination');
+      let currentPage = 1;
+      const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+
+      function renderPage(page) {
+        currentPage = page;
+        const startIndex = (page - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+
+        cards.forEach((card, index) => {
+          // Reset layout classes
+          card.classList.remove('bento-lead', 'bento-half');
+
+          if (index >= startIndex && index < endIndex) {
+            card.style.display = '';
+            const positionInPane = index - startIndex;
+            // First item on each 5-post page spans full 12 columns; next 4 span 6 columns each
+            if (positionInPane === 0) {
+              card.classList.add('bento-lead');
+            } else {
+              card.classList.add('bento-half');
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        renderPaginationControls();
+      }
+
+      function renderPaginationControls() {
+        paginationContainer.innerHTML = '';
+        if (totalPages <= 1) return;
+
+        // Previous Button
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'page-btn';
+        prevBtn.innerHTML = '&larr; Newer';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => {
+          renderPage(currentPage - 1);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        paginationContainer.appendChild(prevBtn);
+
+        // Numbered Page Buttons
+        for (let i = 1; i <= totalPages; i++) {
+          const numBtn = document.createElement('button');
+          numBtn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+          numBtn.textContent = i;
+          numBtn.addEventListener('click', () => {
+            renderPage(i);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+          paginationContainer.appendChild(numBtn);
+        }
+
+        // Next Button
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'page-btn';
+        nextBtn.innerHTML = 'Older &rarr;';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => {
+          renderPage(currentPage + 1);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        paginationContainer.appendChild(nextBtn);
+      }
+
+      // Initialize first view pane
+      renderPage(1);
+
+      // Back to Top Button visibility
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+    });
+
+    // Close AI Artwork Note tooltip when clicking/tapping outside
+      document.addEventListener('click', (e) => {
+        const wrap = document.getElementById('aiDisclaimerWrap');
+        if (wrap && !wrap.contains(e.target)) {
+          wrap.classList.remove('open');
+          wrap.querySelector('.disclaimer-trigger').setAttribute('aria-expanded', 'false');
+        }
+      });
+  </script>
+
+<script src="js/typewriter-bg.js"></script>
+
+</body>
+</html>
