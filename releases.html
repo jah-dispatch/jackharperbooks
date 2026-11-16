@@ -14,21 +14,26 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/scheme-winter.css">
   <style>
+    /* Widen main-content slightly on Releases so 3-column Bento cards breathe comfortably */
+    .main-content {
+      max-width: 1180px;
+    }
+
     /* Bento Grid Layout Styles */
     .bento-container {
-      max-width: 1100px;
+      max-width: 1160px;
       margin: 3rem auto;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 2rem;
+      gap: 1.75rem;
       padding: 0 1rem;
     }
 
     .bento-card {
       background: rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 16px;
-      padding: 2rem;
+      border-radius: 8px;
+      padding: 1.85rem;
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, border-color 0.3s ease;
@@ -51,7 +56,7 @@
       align-items: center;
     }
 
-    /* Standard Bento Cards for Placeholders */
+    /* Standard Bento Cards */
     .bento-standard {
       grid-column: span 4;
       min-height: 450px;
@@ -104,7 +109,7 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Retail Links Row */
+    /* Featured Card Retail Links (Single Horizontal Row) */
     .retail-links {
       display: flex;
       gap: 0.75rem;
@@ -112,10 +117,29 @@
       margin-top: auto;
     }
 
+    /* Standard Bento Cards: Clean 2-Per-Row Symmetrical Button Grid */
+    .bento-standard .retail-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+
+    .bento-standard .retail-btn {
+      justify-content: center;
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+    }
+
+    /* Universal Link spans full width across the bottom of the 2-column button grid */
+    .bento-standard .retail-btn:last-child {
+      grid-column: span 2;
+      padding: 0.6rem 0.85rem;
+    }
+
     .retail-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       background: rgba(30, 41, 59, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 0.5rem 0.85rem;
@@ -125,6 +149,7 @@
       font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
 
     .retail-btn:hover {
@@ -133,9 +158,10 @@
     }
 
     .retail-btn img {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
       object-fit: contain;
+      flex-shrink: 0;
     }
 
     /* Responsive Breakdown */
@@ -212,13 +238,17 @@
             Deep within the misty douglas firs outside Seattle, an abandoned lake house holds a secret left behind in a cast-copper mailbox. When neurology intern Brian Bellvue leaves a quiet, sentimental letter in the past, he never expects a response—let alone one from Richard Arthur Dixon, a traveling journalist writing from years in the future. As hand-written letters bridge the gap, Brian scrambles to pioneer a protocol for a rare neurological condition, while Richard holds the ultimate historical truth of Brian's work.
           </p>
           <div class="retail-links">
-            <a href="https://books.apple.com/us/book/hemingway-falls/id6834660009" target="_blank" class="retail-btn">
+            <a href="#" target="_blank" class="retail-btn">
               <img src="assets/images/amazon-icon.png" alt="Amazon">
               Amazon
             </a>
-            <a href="#" target="_blank" class="retail-btn">
+            <a href="https://books.apple.com/us/book/hemingway-falls/id6834660009" target="_blank" class="retail-btn">
               <img src="assets/images/apple-icon.png" alt="Apple Books">
               Apple Books
+            </a>
+            <a href="https://www.barnesandnoble.com/w/hemingway-falls-jack-harper/1151984315?ean=2940197816986" target="_blank" class="retail-btn">
+              <img src="assets/images/b-n.png" alt="Barnes & Noble">
+              Barnes &amp; Noble
             </a>
             <a href="#" target="_blank" class="retail-btn">
               <img src="assets/images/kobo-icon.png" alt="Kobo">
@@ -254,6 +284,10 @@
             <img src="assets/images/apple-icon.png" alt="Apple">
             Apple
           </a>
+          <a href="https://www.barnesandnoble.com/w/distance-between-him-jack-harper/1145412057?ean=2940196867354" target="_blank" class="retail-btn">
+            <img src="assets/images/b-n.png" alt="Barnes & Noble">
+            B&amp;N
+          </a>
           <a href="https://www.kobo.com/us/en/ebook/distance-between-him-1?sId=6b568914-5123-4b63-82a6-555a3038c9de&ssId=uF7NLR9KT25wB94vYj2cY" target="_blank" class="retail-btn">
             <img src="assets/images/kobo-icon.png" alt="Kobo">
             Kobo
@@ -286,6 +320,10 @@
           <a href="https://books.apple.com/us/book/sands-of-time/id6832689683" target="_blank" class="retail-btn">
             <img src="assets/images/apple-icon.png" alt="Apple">
             Apple
+          </a>
+          <a href="https://www.barnesandnoble.com/w/sands-of-time-jack-harper/1145416558?ean=2940197173881" target="_blank" class="retail-btn">
+            <img src="assets/images/b-n.png" alt="Barnes & Noble">
+            B&amp;N
           </a>
           <a href="https://www.kobo.com/us/en/ebook/sands-of-time-34?sId=f9273274-e652-4b08-939c-365e3c3ed384&ssId=jFoudY7EzPUwKe3B2G3nE" target="_blank" class="retail-btn">
             <img src="assets/images/kobo-icon.png" alt="Kobo">
@@ -320,6 +358,10 @@
             <img src="assets/images/apple-icon.png" alt="Apple">
             Apple
           </a>
+          <a href="https://www.barnesandnoble.com/w/harts-inferno-jack-harper/1145264327?ean=2940197155085" target="_blank" class="retail-btn">
+            <img src="assets/images/b-n.png" alt="Barnes & Noble">
+            B&amp;N
+          </a>
           <a href="https://www.kobo.com/us/en/ebook/hart-s-inferno-1?sId=e4585174-81be-4561-a209-6f149eab60c1&ssId=YpL5AwxdF61o3BPdUbyoH" target="_blank" class="retail-btn">
             <img src="assets/images/kobo-icon.png" alt="Kobo">
             Kobo
@@ -351,6 +393,10 @@
           <a href="#" target="_blank" class="retail-btn">
             <img src="assets/images/apple-icon.png" alt="Apple">
             Apple
+          </a>
+          <a href="https://www.barnesandnoble.com/w/and-a-bag-of-chips-jack-harper/1147009967?ean=2940198140042" target="_blank" class="retail-btn">
+            <img src="assets/images/b-n.png" alt="Barnes & Noble">
+            B&amp;N
           </a>
           <a href="#" target="_blank" class="retail-btn">
             <img src="assets/images/kobo-icon.png" alt="Kobo">

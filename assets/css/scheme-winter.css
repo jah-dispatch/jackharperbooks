@@ -107,3 +107,42 @@ body {
   pointer-events: none; /* Allows all clicks to pass through seamlessly */
   z-index: 99999;       /* Elevates snow above all text, cards, and backgrounds */
 }
+.welcome-card,
+.info-card {
+  background:rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.welcome-card .intro-paragraph {
+  color: #cbd5e1;
+}
+.welcome-card,
+.bio-card,
+.info-card {
+  background:rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.bio-card .bio-text p {
+  color: #cbd5e1;
+}
+/* Winter Color Palette Variables (Feeds main.css hooks across all main pages) */
+:root {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --nav-bg: rgba(15, 23, 42, 0.95);
+  --nav-border: rgba(56, 189, 248, 0.25);
+  --nav-text: #e2e8f0;
+  --accent-color: #38bdf8;
+  --btn-bg: #0284c7;
+  --btn-text: #ffffff;
+  --btn-hover: #0369a1;
+  --footer-bg: rgba(9, 13, 24, 0.96);
+  --footer-text: #94a3b8;
+}
