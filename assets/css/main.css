@@ -999,3 +999,103 @@ main {
   visibility: visible !important;
   transition: none !important;
 }
+/* =========================================================
+   Navbar Dropdown Submenu (Books -> Hemingway Falls)
+   ========================================================= */
+.nav-links li.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-caret {
+  font-size: 0.7rem;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  opacity: 0.85;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.nav-links li.nav-dropdown:hover .dropdown-caret {
+  transform: rotate(180deg);
+}
+
+/* Desktop Flyout Menu — higher specificity to beat .nav-links ul */
+.nav-links .dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 195px;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.45rem;
+  list-style: none !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  z-index: 1100;
+}
+
+/* Invisible hover bridge so moving the cursor down doesn't close the menu */
+.nav-links .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -0.55rem;
+  left: 0;
+  right: 0;
+  height: 0.55rem;
+}
+
+.nav-links li.nav-dropdown:hover .dropdown-menu,
+.nav-links li.nav-dropdown:focus-within .dropdown-menu {
+  display: block !important;
+}
+
+.nav-links .dropdown-menu li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+}
+
+.nav-links .dropdown-menu li a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.92rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  background: rgba(56, 189, 248, 0.14);
+}
+
+/* Mobile Hamburger Menu Layout */
+@media (max-width: 768px) {
+  .nav-links .dropdown-menu {
+    position: static;
+    transform: none;
+    display: block !important;
+    background: rgba(30, 41, 59, 0.55);
+    border: none;
+    border-left: 2px solid rgba(56, 189, 248, 0.45);
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0.35rem auto 0.25rem;
+    padding: 0.2rem 0;
+    min-width: unset;
+  }
+
+  .nav-links .dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-links .dropdown-menu li a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+    opacity: 0.92;
+  }
+}
