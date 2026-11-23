@@ -34,8 +34,247 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/scheme-winter.css">
+
+  <!-- [COUNTDOWN: REMOVE AFTER LAUNCH] Full-Screen Midnight Takeover Styles -->
+  <style>
+    body.hf-countdown-lock {
+      overflow: hidden;
+    }
+
+    /* Sits above navbar (1000) & radio drawer (1001), below #snow-canvas (99999) */
+    .hf-countdown-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: radial-gradient(circle at center, rgba(15, 23, 42, 0.80) 0%, rgba(9, 13, 24, 0.90) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      transition: opacity 0.45s ease;
+    }
+
+    .hf-countdown-overlay.is-active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .hf-countdown-overlay.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Mobile-Responsive Top-Right Close (X) Button */
+    .hf-countdown-close {
+      position: fixed;
+      top: max(1.15rem, env(safe-area-inset-top));
+      right: max(1.15rem, env(safe-area-inset-right));
+      z-index: 50001;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #e2e8f0;
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.55rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+      transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+
+    .hf-countdown-close:hover,
+    .hf-countdown-close:focus-visible {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #fef08a;
+      color: #fef08a;
+      transform: scale(1.08) rotate(90deg);
+      outline: none;
+    }
+
+    /* Centered Stage Container */
+    .hf-countdown-stage {
+      width: 100%;
+      max-width: 780px;
+      text-align: center;
+      padding: 1rem;
+      animation: hfStageFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes hfStageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .hf-countdown-eyebrow {
+      display: inline-block;
+      background: rgba(202, 138, 4, 0.18);
+      color: #fef08a;
+      border: 1px solid rgba(254, 240, 138, 0.4);
+      padding: 0.28rem 0.9rem;
+      border-radius: 14px;
+      font-family: var(--font-body, 'Old Standard TT', serif);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Oversized Unkempt Shimmering Gold Digits */
+    .hf-countdown-clock {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: clamp(0.45rem, 2.2vw, 1.35rem);
+      margin: 0 auto 1.35rem auto;
+    }
+
+    .hf-cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hf-cd-digits,
+    .hf-cd-colon {
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-weight: 700;
+      font-size: clamp(2.9rem, 11.5vw, 6.75rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      background: linear-gradient(90deg, #fef08a 0%, #cbd5e1 30%, #ca8a04 60%, #e2e8f0 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 5s linear infinite;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.65));
+    }
+
+    .hf-cd-digits {
+      font-variant-numeric: tabular-nums;
+      min-width: 2.1ch;
+    }
+
+    .hf-cd-label {
+      margin-top: 0.35rem;
+      font-family: var(--font-body, 'Old Standard TT', serif);
+      font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    /* Bold #38bdf8 Old Standard TT Subtitle Caption */
+    .hf-countdown-caption {
+      font-family: var(--font-body, 'Old Standard TT', serif);
+      font-weight: 700;
+      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+      line-height: 1.6;
+      color: #38bdf8;
+      max-width: 620px;
+      margin: 0 auto 2rem auto;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Matching Easter-Egg CTA Button (Styled after .preorder-cta-btn) */
+    .hf-newsletter-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 310px;
+      padding: 0.85rem 1.5rem;
+      background: linear-gradient(135deg, var(--btn-bg, #0284c7) 0%, #0369a1 100%);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      border-radius: 6px;
+      color: var(--btn-text, #ffffff);
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .hf-newsletter-cta:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+      border-color: #fef08a;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      .hf-countdown-overlay {
+        padding: 1rem;
+      }
+
+      .hf-countdown-close {
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+      }
+
+      .hf-newsletter-cta {
+        max-width: 100%;
+      }
+    }
+  </style>
+  <!-- [/COUNTDOWN: REMOVE AFTER LAUNCH] -->
 </head>
 <body>
+
+  <!-- [COUNTDOWN: REMOVE AFTER LAUNCH] Full-Screen Midnight Takeover Overlay -->
+  <div id="hf-countdown-overlay" class="hf-countdown-overlay" role="dialog" aria-modal="true" aria-labelledby="hf-countdown-caption">
+    <button id="hf-countdown-close" class="hf-countdown-close" aria-label="Close countdown and view site">&times;</button>
+
+    <div class="hf-countdown-stage">
+      <span class="hf-countdown-eyebrow">Hemingway Falls &bull; Midnight Dispatch</span>
+
+      <div class="hf-countdown-clock" aria-live="off">
+        <div class="hf-cd-unit">
+          <span id="hf-cd-hours" class="hf-cd-digits">00</span>
+          <span class="hf-cd-label">Hours</span>
+        </div>
+        <span class="hf-cd-colon" aria-hidden="true">:</span>
+        <div class="hf-cd-unit">
+          <span id="hf-cd-minutes" class="hf-cd-digits">00</span>
+          <span class="hf-cd-label">Minutes</span>
+        </div>
+        <span class="hf-cd-colon" aria-hidden="true">:</span>
+        <div class="hf-cd-unit">
+          <span id="hf-cd-seconds" class="hf-cd-digits">00</span>
+          <span class="hf-cd-label">Seconds</span>
+        </div>
+      </div>
+
+      <p id="hf-countdown-caption" class="hf-countdown-caption">
+        From my desk to your own copper inbox when the clock strikes midnight this Friday...
+      </p>
+
+      <a href="https://author-jack-harper.kit.com/"
+         target="_blank"
+         rel="noopener"
+         class="hf-newsletter-cta">
+        Join my newsletter
+      </a>
+    </div>
+  </div>
+  <!-- [/COUNTDOWN: REMOVE AFTER LAUNCH] -->
 
   <!-- Sticky Wrapper containing both Marquee and Navbar -->
   <div class="header-sticky-wrapper">
@@ -158,6 +397,10 @@
 
   <!-- Non-intrusive Snow Animation Script -->
   <script src="js/snow.js"></script>
+
+  <!-- [COUNTDOWN: REMOVE AFTER LAUNCH] Countdown Controller -->
+  <script src="js/countdown.js"></script>
+  <!-- [/COUNTDOWN: REMOVE AFTER LAUNCH] -->
 
   <!-- Hero Carousel Controller (Smooth Horizontal Slide + Mobile Touch Swipe) -->
   <script>

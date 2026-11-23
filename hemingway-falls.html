@@ -321,6 +321,118 @@
         text-align: left !important;
       }
     }
+    /* Direct Preorder Callout Module */
+.preorder-callout {
+  margin-top: 1.75rem;
+  padding: 1.5rem 1.75rem;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  text-align: left;
+  clear: both;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.preorder-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.preorder-tag {
+  background: rgba(202, 138, 4, 0.18);
+  color: #fef08a;
+  border: 1px solid rgba(254, 240, 138, 0.38);
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.preorder-title {
+  font-family: var(--font-heading, 'Unkempt', cursive);
+  font-size: 1.65rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+.preorder-lead {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.preorder-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.35rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.preorder-perks li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: #e2e8f0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.preorder-perks li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+.preorder-perks strong {
+  color: #fef08a;
+  font-weight: 700;
+}
+
+.preorder-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, var(--btn-bg, #0284c7) 0%, #0369a1 100%);
+  border: 1px solid rgba(56, 189, 248, 0.55);
+  border-radius: 6px;
+  color: var(--btn-text, #ffffff);
+  font-family: var(--font-heading, 'Unkempt', cursive);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.preorder-cta-btn:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+  border-color: #fef08a;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 680px) {
+  .preorder-callout {
+    padding: 1.25rem;
+  }
+
+  .preorder-title {
+    font-size: 1.45rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -391,6 +503,8 @@
             As hand-written letters bridge the impossible divide between their eras, Brian scrambles to pioneer a clinical protocol for a rare neurological condition—while Richard holds the ultimate historical truth of Brian's work, and the quiet lakeside town of Hemingway Falls draws them both toward an unforgettable reckoning.
           </p>
         </div>
+
+
 
         <div class="retail-links">
           <a href="#" target="_blank" class="retail-btn">

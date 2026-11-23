@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Prevent search engines from indexing post-checkout confirmation page -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="Jack Harper">
+
+  <title>Preorder Confirmed — Hemingway Falls VIP Bundle | Jack Harper</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/scheme-winter.css">
+
+  <style>
+    /* Main Content Container */
+    .main-content {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4.5rem;
+    }
+
+    /* Frosted Bento Confirmation Card */
+    .bento-card {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.76);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 2.75rem 2.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .confirm-badge {
+      display: inline-block;
+      background: rgba(202, 138, 4, 0.18);
+      color: #fef08a;
+      border: 1px solid rgba(254, 240, 138, 0.4);
+      padding: 0.28rem 0.9rem;
+      border-radius: 14px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .confirm-header {
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 2.4rem;
+      margin: 0 0 0.65rem 0;
+      line-height: 1.2;
+    }
+
+    .confirm-subtitle {
+      color: #38bdf8;
+      font-style: italic;
+      font-size: 1.12rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .confirm-intro {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+    }
+
+    /* Three-Stage Launch Timeline Grid */
+    .timeline-box {
+      background: rgba(30, 41, 59, 0.62);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      padding: 1.75rem;
+      text-align: left;
+      margin: 0 auto 2rem auto;
+      max-width: 720px;
+    }
+
+    .timeline-box h3 {
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      color: #ffffff;
+      font-size: 1.45rem;
+      margin: 0 0 1.1rem 0;
+      text-align: center;
+    }
+
+    .timeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: #e2e8f0;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .timeline-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      color: #38bdf8;
+      font-size: 0.9rem;
+    }
+
+    .timeline-date {
+      color: #fef08a;
+      font-weight: 700;
+    }
+
+    /* In-Universe Dispatch Note */
+    .dispatch-note {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.25rem 1rem;
+      margin: 0 auto 2rem auto;
+      max-width: 660px;
+      color: #94a3b8;
+      font-style: italic;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* Navigation Action Buttons */
+    .confirm-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .primary-return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.75rem;
+      background: linear-gradient(135deg, var(--btn-bg, #0284c7) 0%, #0369a1 100%);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      border-radius: 6px;
+      color: var(--btn-text, #ffffff);
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .primary-return-btn:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+      border-color: #fef08a;
+      transform: translateY(-2px);
+    }
+
+    .secondary-return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.5rem;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .secondary-return-btn:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: #38bdf8;
+      color: #ffffff;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 680px) {
+      .bento-card {
+        padding: 1.75rem 1.35rem;
+      }
+
+      .confirm-header {
+        font-size: 1.9rem;
+      }
+
+      .timeline-box {
+        padding: 1.25rem;
+      }
+
+      .confirm-actions {
+        flex-direction: column;
+      }
+
+      .primary-return-btn,
+      .secondary-return-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-jh.png" alt="Jack Harper Logo">
+    </a>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="jackharper.html" class="shimmer-nav-1">About</a></li>
+      <li class="nav-dropdown">
+        <a href="releases.html" class="shimmer-nav-2">Books <span class="dropdown-caret">&#9662;</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="hemingway-falls.html" class="shimmer-nav-1">Hemingway Falls</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="shimmer-nav-1">Blog</a></li>
+      <li><a href="contact.html" class="shimmer-nav-2">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Main Confirmation Content -->
+  <main class="main-content">
+    <article class="bento-card">
+      <span class="confirm-badge">VIP Preorder Secured &bull; First Edition</span>
+
+      <h1 class="confirm-header shimmer-header-1">Your Copy Is Reserved!</h1>
+      <p class="confirm-subtitle">Two timelines. One rusted copper mailbox. And now, your name on the manifest.</p>
+
+      <p class="confirm-intro">
+        Thank you for preordering the <strong>Signed First Edition + VIP Lore Bundle</strong> of <em>Hemingway Falls</em> directly from my desk. Your Stripe payment receipt and order confirmation are already on their way to your inbox.
+      </p>
+
+      <!-- Launch Schedule Breakdown -->
+      <section class="timeline-box">
+        <h3>What Arrives &amp; When</h3>
+        <ul class="timeline-list">
+          <li>
+            <span class="timeline-date">Right Now:</span> Your Stripe payment receipt and VIP Preorder confirmation email are landing in your inbox. (If you don't see them within a few minutes, check your Promotions or Spam folder and mark <em>jackharperbooks.com</em> as safe.)
+          </li>
+          <li>
+            <span class="timeline-date">February 5, 2027:</span> Your <strong>Free Early-Access E-Book</strong> arrives automatically—five full days before <em>Hemingway Falls</em> goes live on retail platforms.
+          </li>
+          <li>
+            <span class="timeline-date">February 12, 2027 (Release Day):</span> Watch your inbox for the <strong>Release Day E-Mail Celebration w/ personal letters from Brian &amp; Rick</strong>.
+          </li>
+          <li>
+            <span class="timeline-date">Shortly After Release:</span> Your hand-signed paperback and VIP Lore Swag Bundle ship straight to the address you entered at checkout, followed by a personal shipping confirmation note from me.
+          </li>
+        </ul>
+      </section>
+
+      <div class="dispatch-note">
+        &ldquo;Some letters cross miles. Ours had to cross years. Keep an eye on the mailbox.&rdquo;
+      </div>
+
+      <div class="confirm-actions">
+        <a href="hemingway-falls.html" class="primary-return-btn">&larr; Back to Hemingway Falls</a>
+        <a href="index.html" class="secondary-return-btn">Return to Home</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jack Harper. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Non-intrusive Snow Animation Script -->
+  <script src="js/snow.js"></script>
+
+  <!-- Back to Top Floating Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    &#8679;
+  </button>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+  </script>
+
+  <!-- Floating Radio Trigger Button -->
+  <button id="radioToggle" class="radio-floating-btn" aria-label="Toggle Radio Player">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(90deg);">
+      <path d="M9 18V5l12-2v13M9 9l12-2M6 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+    Listen to Jack FM
+  </button>
+
+  <!-- Slide-out Radio Drawer Modal -->
+  <div id="radioDrawer" class="radio-drawer">
+    <div class="radio-drawer-header">
+      <h4>Jack FM Radio</h4>
+      <button id="radioClose" class="radio-close-btn" aria-label="Close Radio Drawer">&times;</button>
+    </div>
+    <div class="radio-player-container">
+      <iframe src="https://tunein.com/embed/player/s320825/" style="width:100%; height:100px;" scrolling="no" frameborder="no"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const radioToggle = document.getElementById('radioToggle');
+    const radioDrawer = document.getElementById('radioDrawer');
+    const radioClose = document.getElementById('radioClose');
+
+    radioToggle.addEventListener('click', () => {
+      radioDrawer.classList.toggle('open');
+    });
+
+    radioClose.addEventListener('click', () => {
+      radioDrawer.classList.remove('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!radioDrawer.contains(event.target) && !radioToggle.contains(event.target)) {
+        radioDrawer.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
