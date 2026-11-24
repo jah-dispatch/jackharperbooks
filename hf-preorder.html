@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description" content="Hemingway Falls by Jack Harper — A standalone time-travel MM romance and medical mystery set between Seattle and a misty lakeside cabin in the Pacific Northwest.">
+  <meta name="keywords" content="Hemingway Falls, Jack Harper, Gay Romance Author, MM Romance, Time Travel Romance, Medical Mystery, Brian Bellvue, Rick Dixon, Standalone MM Romance">
+  <meta name="author" content="Jack Harper">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jackharperbooks.com/hemingway-falls.html">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="Jack Harper Books">
+  <meta property="og:title" content="Hemingway Falls | Jack Harper — Gay &amp; MM Romance Author">
+  <meta property="og:description" content="Two timelines. One rusted copper mailbox. A connection that defies decades. Explore the world, characters, and story of Hemingway Falls by Jack Harper.">
+  <meta property="og:url" content="https://jackharperbooks.com/hemingway-falls.html">
+  <meta property="og:image" content="https://jackharperbooks.com/assets/images/Hero-HemingwayFallsPage.png">
+  <meta property="og:image:alt" content="Hemingway Falls by Jack Harper">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hemingway Falls | Jack Harper — Gay &amp; MM Romance Author">
+  <meta name="twitter:description" content="Two timelines. One rusted copper mailbox. A connection that defies decades.">
+  <meta name="twitter:image" content="https://jackharperbooks.com/assets/images/Hero-HemingwayFallsPage.png">
+
+  <title>Hemingway Falls | Jack Harper — Gay &amp; MM Romance Author</title>
+
+  <!-- Structured Data: WebPage + Book Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://jackharperbooks.com/hemingway-falls.html#webpage",
+        "url": "https://jackharperbooks.com/hemingway-falls.html",
+        "name": "Hemingway Falls | Jack Harper",
+        "description": "Official standalone book page, character profiles, and story details for Hemingway Falls by Jack Harper.",
+        "isPartOf": {
+          "@id": "https://jackharperbooks.com/#website"
+        },
+        "about": {
+          "@id": "https://jackharperbooks.com/releases.html#hemingway-falls"
+        }
+      },
+      {
+        "@type": "Book",
+        "@id": "https://jackharperbooks.com/releases.html#hemingway-falls",
+        "name": "Hemingway Falls",
+        "author": {
+          "@type": "Person",
+          "@id": "https://jackharperbooks.com/#author",
+          "name": "Jack Harper",
+          "url": "https://jackharperbooks.com/"
+        },
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "en",
+        "genre": [
+          "MM Romance",
+          "Gay Romance",
+          "Time Travel Romance",
+          "Medical Mystery"
+        ],
+        "character": [
+          {
+            "@type": "Person",
+            "name": "Dr. Brian Bellvue"
+          },
+          {
+            "@type": "Person",
+            "name": "Richard Arthur Dixon"
+          }
+        ],
+        "image": "https://jackharperbooks.com/assets/images/HemingwayFalls_CoverFINAL.jpg",
+        "url": "https://books2read.com/u/DAXAer",
+        "description": "Deep within the misty douglas firs outside Seattle, an abandoned lake house holds a secret left behind in a cast-copper mailbox. When neurology intern Brian Bellvue leaves a quiet, sentimental letter in the past, he never expects a response—let alone one from Richard Arthur Dixon, a traveling journalist writing from years in the future."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/scheme-winter.css">
+
+  <!-- JSZip & EPUB.js for Client-Side Sample Reader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js" defer></script>
+
+  <style>
+    /* Responsive 1920x800 Hero Banner */
+    .hf-hero-wrapper {
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .hf-hero-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1920 / 800;
+      object-fit: cover;
+    }
+
+    /* Main Content Container */
+    .main-content {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    /* Center-Justified Single-Column Editorial Stack */
+    .hf-cards-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Center-Justified Sample Button Row Above First Card */
+    .sample-cta-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -0.75rem;
+    }
+
+    .sample-cta-btn {
+      max-width: 440px;
+      width: 100%;
+      cursor: pointer;
+      gap: 0.6rem;
+    }
+
+    /* Card Base Matching releases.html Bento Cards */
+    .bento-card {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 10px;
+      padding: 2.25rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    /* Force Left Alignment on Character Cards (overrides global main.css centering) */
+    .character-card,
+    .character-card .editorial-header,
+    .character-card .editorial-body,
+    .character-card .editorial-body p {
+      text-align: left !important;
+    }
+
+    /* Typography Inside Editorial Cards */
+    .editorial-header {
+      font-family: 'Unkempt', serif;
+      font-size: 2.15rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .editorial-subtitle {
+      color: #38bdf8;
+      font-style: italic;
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-body {
+      color: #cbd5e1;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .editorial-body p {
+      margin-bottom: 1.15rem;
+    }
+
+    .editorial-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Clearfix for Floated Editorial Images */
+    .editorial-flow::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Top-Left Responsive 200x300 Character Portrait */
+    .editorial-img-top-left {
+      float: left;
+      width: clamp(140px, 24vw, 200px);
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 200 / 300;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0.2rem 1.65rem 1rem 0;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+    }
+
+    /* Bottom-Right Responsive Scene / Mockup Image */
+    .editorial-bottom-right-wrap {
+      float: right;
+      clear: right;
+      width: clamp(160px, 28vw, 245px);
+      max-width: 100%;
+      margin: 1rem 0 0.15rem 1.65rem;
+    }
+
+    .editorial-bottom-right-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+    }
+
+    .editorial-bottom-right-wrap.mockup-transparent img {
+      border: none;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.65);
+    }
+
+    /* Tags & Centered Buy Links for Top Card */
+    .book-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+    }
+
+    .retail-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      clear: both;
+    }
+
+    .retail-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .retail-btn:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+    }
+
+    .retail-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* Direct Preorder Callout Module */
+    .preorder-callout {
+      margin-top: 1.75rem;
+      padding: 1.5rem 1.75rem;
+      background: rgba(30, 41, 59, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 10px;
+      text-align: left;
+      clear: both;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .preorder-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .preorder-tag {
+      background: rgba(202, 138, 4, 0.18);
+      color: #fef08a;
+      border: 1px solid rgba(254, 240, 138, 0.38);
+      padding: 0.2rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .preorder-title {
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.65rem;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.25;
+    }
+
+    .preorder-lead {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .preorder-perks {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.35rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .preorder-perks li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: #e2e8f0;
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .preorder-perks li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #38bdf8;
+      font-size: 0.85rem;
+    }
+
+    .preorder-perks strong {
+      color: #fef08a;
+      font-weight: 700;
+    }
+
+    .preorder-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: linear-gradient(135deg, var(--btn-bg, #0284c7) 0%, #0369a1 100%);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      border-radius: 6px;
+      color: var(--btn-text, #ffffff);
+      font-family: var(--font-heading, 'Unkempt', cursive);
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .preorder-cta-btn:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+      border-color: #fef08a;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       REALISTIC CSS IPAD E-READER MODAL
+       ========================================================================== */
+    .ipad-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 10, 22, 0.86);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 100000; /* Above #snow-canvas (99999) so snow never obscures book text */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .ipad-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    /* Prevent epub.js's internal iframe from intercepting clicks while the modal is closed */
+    .ipad-modal-backdrop:not(.open) * {
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    /* Outer Machined Aluminum & Black Glass iPad Chassis */
+    .ipad-device {
+      position: relative;
+      width: min(94vw, 660px);
+      height: min(90vh, 880px);
+      background: linear-gradient(145deg, #17191e 0%, #090a0d 55%, #121418 100%);
+      border-radius: 36px;
+      padding: 24px 18px 22px;
+      border: 3px solid #64748b;
+      box-shadow:
+        0 0 0 2px #1e293b,
+        0 30px 80px rgba(0, 0, 0, 0.85),
+        0 0 40px rgba(56, 189, 248, 0.16),
+        inset 0 1px 2px rgba(255, 255, 255, 0.25),
+        inset 0 0 14px rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.95) translateY(14px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+    }
+
+    .ipad-modal-backdrop.open .ipad-device {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Hardware Power Button (Top Right Edge) */
+    .ipad-device::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: 46px;
+      width: 36px;
+      height: 3px;
+      background: linear-gradient(90deg, #475569, #94a3b8, #475569);
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Hardware Volume Rockers (Right Side Edge) */
+    .ipad-device::after {
+      content: "";
+      position: absolute;
+      top: 68px;
+      right: -6px;
+      width: 3px;
+      height: 62px;
+      background: linear-gradient(180deg, #94a3b8 0%, #94a3b8 42%, transparent 42%, transparent 58%, #94a3b8 58%, #94a3b8 100%);
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Top Bezel Camera & Ambient Sensor Assembly */
+    .ipad-bezel-top {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 5;
+    }
+
+    .ipad-sensor {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #1e293b;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.9);
+    }
+
+    .ipad-camera {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #38bdf8 0%, #1d4ed8 35%, #090d16 70%);
+      border: 1.5px solid #272b33;
+      box-shadow: 0 0 3px rgba(56, 189, 248, 0.45);
+    }
+
+    /* Inner Retina Display */
+    .ipad-screen {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: #fbf8f1;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .ipad-screen.theme-sepia {
+      background: #f4ecd8;
+    }
+
+    .ipad-screen.theme-night {
+      background: #0f172a;
+    }
+
+    /* Simulated iPadOS Status Bar */
+    .ipados-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 16px 4px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #475569;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .ipad-screen.theme-night .ipados-status-bar {
+      color: #94a3b8;
+    }
+
+    .ipados-status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* E-Reader Toolbar */
+    .ereader-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 8px 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+      background: rgba(255, 255, 255, 0.55);
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .ipad-screen.theme-sepia .ereader-toolbar {
+      background: rgba(235, 224, 198, 0.65);
+    }
+
+    .ipad-screen.theme-night .ereader-toolbar {
+      background: rgba(30, 41, 59, 0.8);
+      border-bottom-color: rgba(148, 163, 184, 0.15);
+    }
+
+    .ereader-toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ereader-btn {
+      background: rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      color: #1e293b;
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .ereader-btn:hover {
+      background: rgba(2, 132, 199, 0.14);
+      border-color: #0284c7;
+    }
+
+    .ipad-screen.theme-night .ereader-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
+      color: #e2e8f0;
+    }
+
+    .ipad-screen.theme-night .ereader-btn:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+    }
+
+    .ereader-close-btn {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff !important;
+      padding: 4px 11px;
+    }
+
+    .ereader-close-btn:hover {
+      background: #0369a1 !important;
+    }
+
+    .ereader-book-title {
+      font-family: 'Old Standard TT', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #334155;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 210px;
+    }
+
+    .ipad-screen.theme-night .ereader-book-title {
+      color: #cbd5e1;
+    }
+
+    /* Theme Color Swatch Circles */
+    .theme-swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid #94a3b8;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .theme-swatch.active {
+      border-color: #0284c7;
+      transform: scale(1.15);
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.3);
+    }
+
+    .swatch-paper { background: #fbf8f1; }
+    .swatch-sepia { background: #f4ecd8; }
+    .swatch-night { background: #0f172a; }
+
+    /* Table of Contents Slide-Down Drawer */
+    .ereader-toc-drawer {
+      position: absolute;
+      top: 66px;
+      left: 12px;
+      width: min(270px, 82%);
+      max-height: 65%;
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.16);
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      padding: 8px;
+      z-index: 30;
+      display: none;
+      text-align: left;
+    }
+
+    .ipad-screen.theme-night .ereader-toc-drawer {
+      background: #1e293b;
+      border-color: rgba(148, 163, 184, 0.25);
+    }
+
+    .ereader-toc-drawer.open {
+      display: block;
+    }
+
+    .toc-item-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-family: 'Old Standard TT', serif;
+      font-size: 0.9rem;
+      color: #1e293b;
+      cursor: pointer;
+    }
+
+    .toc-item-btn:hover {
+      background: rgba(2, 132, 199, 0.12);
+    }
+
+    .ipad-screen.theme-night .toc-item-btn {
+      color: #e2e8f0;
+    }
+
+    /* Main EPUB Book Canvas Area */
+    .ereader-stage {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #epub-viewer {
+      width: 100%;
+      height: 100%;
+      padding: 0 28px;
+      box-sizing: border-box;
+    }
+
+    /* Left & Right Page Turn Arrows */
+    .page-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 54px;
+      border: none;
+      background: rgba(15, 23, 42, 0.06);
+      color: #475569;
+      font-size: 1.4rem;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .page-nav-arrow:hover {
+      background: rgba(2, 132, 199, 0.18);
+      color: #0284c7;
+    }
+
+    .ipad-screen.theme-night .page-nav-arrow {
+      background: rgba(255, 255, 255, 0.06);
+      color: #94a3b8;
+    }
+
+    .ipad-screen.theme-night .page-nav-arrow:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+    }
+
+    .page-prev { left: 4px; }
+    .page-next { right: 4px; }
+
+    /* Loading & Fallback Status Message */
+    .ereader-status-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Old Standard TT', serif;
+      color: #334155;
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    .ipad-screen.theme-night .ereader-status-overlay {
+      color: #cbd5e1;
+    }
+
+    .ereader-spinner {
+      width: 30px;
+      height: 30px;
+      border: 3px solid rgba(2, 132, 199, 0.2);
+      border-top-color: #0284c7;
+      border-radius: 50%;
+      animation: epub-spin 0.8s linear infinite;
+      margin-bottom: 0.85rem;
+    }
+
+    @keyframes epub-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Reader Bottom Bar & iPadOS Home Indicator */
+    .ereader-footer {
+      padding: 6px 16px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      flex-shrink: 0;
+    }
+
+    .ipad-screen.theme-night .ereader-footer {
+      border-top-color: rgba(148, 163, 184, 0.12);
+    }
+
+    .ereader-chapter-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+
+    .ipad-home-bar {
+      width: 135px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.35);
+    }
+
+    .ipad-screen.theme-night .ipad-home-bar {
+      background: rgba(248, 250, 252, 0.35);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 680px) {
+      .bento-card {
+        padding: 1.5rem;
+      }
+
+      .editorial-header {
+        font-size: 1.75rem;
+      }
+
+      .editorial-img-top-left {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto 1.25rem auto;
+      }
+
+      .editorial-bottom-right-wrap {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 260px;
+        margin: 1.35rem auto 0 auto;
+      }
+
+      /* Keep character card text strictly left-aligned on mobile too */
+      .character-card,
+      .character-card .editorial-header,
+      .character-card .editorial-body,
+      .character-card .editorial-body p {
+        text-align: left !important;
+      }
+
+      .preorder-callout {
+        padding: 1.25rem;
+      }
+
+      .preorder-title {
+        font-size: 1.45rem;
+      }
+
+      /* Compact Mobile iPad Bezel */
+      .ipad-device {
+        width: 96vw;
+        height: 88vh;
+        border-radius: 26px;
+        padding: 18px 10px 14px;
+      }
+
+      .ereader-book-title {
+        display: none;
+      }
+
+      #epub-viewer {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo-jh.png" alt="Jack Harper Logo">
+    </a>
+    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="jackharper.html" class="shimmer-nav-1">About</a></li>
+      <li class="nav-dropdown">
+        <a href="releases.html" class="shimmer-nav-2">Books <span class="dropdown-caret">&#9662;</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="hemingway-falls.html" class="shimmer-nav-1">Hemingway Falls</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html" class="shimmer-nav-1">Blog</a></li>
+      <li><a href="contact.html" class="shimmer-nav-2">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Responsive 1920x800 Hero Image -->
+  <section class="hf-hero-wrapper">
+    <img
+      src="/assets/images/Hero-HemingwayFallsPage.png"
+      alt="Hemingway Falls — Misty Pacific Northwest Lakeside Setting"
+      class="hf-hero-img"
+      width="1920"
+      height="800"
+    >
+  </section>
+
+  <!-- Main Content: 3 Center-Justified Responsive Cards -->
+  <main class="main-content">
+    <div class="hf-cards-stack">
+
+      <!-- Center-Justified Sample Reader Button Above First Card -->
+      <div class="sample-cta-wrapper">
+        <button type="button" id="openSampleReaderBtn" class="preorder-cta-btn sample-cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          Read a Sample Now!
+        </button>
+      </div>
+
+      <!-- CARD 1: Book Blurb + Bottom-Right Book Mockup -->
+      <article class="bento-card">
+        <div class="book-tags">
+          <span class="tag">Standalone Novel</span>
+          <span class="tag">Time Travel</span>
+          <span class="tag">MM Romance</span>
+          <span class="tag">Medical Mystery</span>
+        </div>
+
+        <h2 class="editorial-header shimmer-header-2">Hemingway Falls by Jack Harper</h2>
+        <p class="editorial-subtitle">Two timelines. One rusted copper mailbox. A connection that defies decades.</p>
+
+        <div class="editorial-body editorial-flow">
+          <p>
+            Deep within the misty douglas firs outside Seattle, an abandoned lake house holds a secret left behind in a cast-copper mailbox. When neurology intern Brian Bellvue leaves a quiet, sentimental letter in the past, he never expects a response—let alone one from Richard Arthur Dixon, a traveling journalist writing from years in the future.
+          </p>
+
+          <div class="editorial-bottom-right-wrap mockup-transparent">
+            <img
+              src="/assets/images/Hemingway-Falls-BookMockup.png"
+              alt="Hemingway Falls Book Mockup"
+            >
+          </div>
+
+          <p>
+            As hand-written letters bridge the impossible divide between their eras, Brian scrambles to pioneer a clinical protocol for a rare neurological condition—while Richard holds the ultimate historical truth of Brian's work, and the quiet lakeside town of Hemingway Falls draws them both toward an unforgettable reckoning.
+          </p>
+        </div>
+
+        <!-- Direct Signed Paperback Preorder Module -->
+        <div class="preorder-callout">
+          <div class="preorder-badge-row">
+            <span class="preorder-tag">Author Direct &bull; Limited First Edition</span>
+          </div>
+
+          <h3 class="preorder-title shimmer-header-2">Preorder the Signed First Edition</h3>
+
+          <p class="preorder-lead">
+            Reserve your signed paperback direct from Jack Harper and unlock the three-stage launch experience:
+          </p>
+
+          <ul class="preorder-perks">
+            <li><strong>1 Week Before Release:</strong> Advanced E-book delivered 5 days before retail launch</li>
+            <li><strong>Feb 12, 2027:</strong> Release Day E-Mail Celebration w/ personal letters from Brian &amp; Rick</li>
+            <li><strong>Shortly After Release:</strong> VIP Lore Bundle shipped straight to your door</li>
+          </ul>
+
+          <a href="https://buy.stripe.com/6oU7sLespguuc1G6jFbZe00"
+             target="_blank"
+             rel="noopener"
+             class="preorder-cta-btn">
+            Preorder Signed Copy + VIP Lore Bundle
+          </a>
+        </div>
+
+        <div class="retail-links">
+          <a href="#" target="_blank" class="retail-btn">
+            <img src="assets/images/amazon-icon.png" alt="Amazon">
+            Amazon
+          </a>
+          <a href="https://books.apple.com/us/book/hemingway-falls/id6834660009" target="_blank" class="retail-btn">
+            <img src="assets/images/apple-icon.png" alt="Apple Books">
+            Apple Books
+          </a>
+          <a href="https://www.barnesandnoble.com/w/hemingway-falls-jack-harper/1151984315?ean=2940197816986" target="_blank" class="retail-btn">
+            <img src="assets/images/b-n.png" alt="Barnes &amp; Noble">
+            Barnes &amp; Noble
+          </a>
+          <a href="https://www.kobo.com/us/en/ebook/hemingway-falls?sId=54eec427-e8cd-416c-a1cf-ce0f6134faa9&amp;ssId=tNFpylhPmCgO28xinrcx9" target="_blank" class="retail-btn">
+            <img src="assets/images/kobo-icon.png" alt="Kobo">
+            Kobo
+          </a>
+          <a href="https://books2read.com/u/DAXAer" target="_blank" class="retail-btn" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+            Universal Link
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2: Brian Bellvue -->
+      <article class="bento-card character-card">
+        <div class="editorial-body editorial-flow">
+          <img
+            src="/assets/images/Hemingway-Falls-Brian-Bellvue.png"
+            alt="Dr. Brian Bellvue"
+            class="editorial-img-top-left"
+          >
+
+          <h1 class="editorial-header shimmer-header-1">Brian Bellvue</h1>
+
+          <p>
+           Grounded, perceptive, and fiercely dedicated to his patients, neurology intern Dr. Brian Bellvue spends his days navigating the high-stakes corridors of a major Seattle hospital and his quiet moments retreating to the mist-shrouded shores of Lake Hemingway.
+          </p>
+
+          <div class="editorial-bottom-right-wrap">
+            <img
+              src="/assets/images/Hemingway-Falls-Seattle-Hospital.png"
+              alt="Seattle Hospital Corridor"
+            >
+          </div>
+
+          <p>
+           When an unexplained perceptual phenomenon and an impossible correspondence through an old copper mailbox upend everything he understands about medicine and time, Brian must balance clinical rigor with an undeniable pull toward a man he has never met in person.
+          </p>
+        </div>
+      </article>
+
+      <!-- CARD 3: Rick Dixon -->
+      <article class="bento-card character-card">
+        <div class="editorial-body editorial-flow">
+          <img
+            src="/assets/images/Hemingway-Falls-Rick-Dixon.png"
+            alt="Richard 'Rick' Dixon"
+            class="editorial-img-top-left"
+          >
+
+          <h1 class="editorial-header shimmer-header-1">Rick Dixon</h1>
+
+          <p>
+            Sharp-tongued, privately affluent, and restless beneath the polished exterior of a veteran Seattle journalist, Richard Arthur Dixon thought he had outrun every sentimental impulse—until a weathered mailbox outside Hemingway Falls delivers a letter that shouldn't exist.
+          </p>
+
+          <div class="editorial-bottom-right-wrap">
+            <img
+              src="/assets/images/Hemingway-Falls-Issaquah-Bookstore.png"
+              alt="Issaquah Independent Bookstore"
+            >
+          </div>
+
+          <p>
+            Trading breaking-news deadlines for quiet afternoons in a tucked-away Issaquah bookshop and late-night letters across time, Rick discovers that the voice writing back from the past knows him better than anyone in his own century.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Realistic CSS iPad E-Reader Modal -->
+  <div id="ipadReaderModal" class="ipad-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="ipadBookTitle">
+    <div class="ipad-device">
+      <!-- Top Bezel Camera & Sensor -->
+      <div class="ipad-bezel-top" aria-hidden="true">
+        <span class="ipad-sensor"></span>
+        <span class="ipad-camera"></span>
+      </div>
+
+      <!-- Retina Display Screen -->
+      <div id="ipadScreen" class="ipad-screen">
+        <!-- iPadOS Status Bar -->
+        <div class="ipados-status-bar" aria-hidden="true">
+          <span>9:41 AM &nbsp;&bull;&nbsp; iPad</span>
+          <div class="ipados-status-icons">
+            <span>5G</span>
+            <span>&#9679;&#9679;&#9679;&#9679;</span>
+            <span>100% &#128267;</span>
+          </div>
+        </div>
+
+        <!-- Reader Controls Toolbar -->
+        <div class="ereader-toolbar">
+          <div class="ereader-toolbar-group">
+            <button type="button" id="tocToggleBtn" class="ereader-btn" title="Table of Contents">&#9776; Chapters</button>
+            <span id="ipadBookTitle" class="ereader-book-title">Hemingway Falls</span>
+          </div>
+
+          <div class="ereader-toolbar-group">
+            <button type="button" id="fontDecreaseBtn" class="ereader-btn" title="Decrease Font Size">A-</button>
+            <button type="button" id="fontIncreaseBtn" class="ereader-btn" title="Increase Font Size">A+</button>
+            <button type="button" class="theme-swatch swatch-paper active" data-theme="paper" title="White Paper"></button>
+            <button type="button" class="theme-swatch swatch-sepia" data-theme="sepia" title="Warm Sepia"></button>
+            <button type="button" class="theme-swatch swatch-night" data-theme="night" title="Night Mode"></button>
+            <button type="button" id="closeReaderBtn" class="ereader-btn ereader-close-btn">Done</button>
+          </div>
+        </div>
+
+        <!-- Slide-down Table of Contents Drawer -->
+        <div id="ereaderTocDrawer" class="ereader-toc-drawer"></div>
+
+        <!-- Main Book Page Canvas -->
+        <div class="ereader-stage">
+          <button type="button" id="prevPageBtn" class="page-nav-arrow page-prev" aria-label="Previous Page">&#10094;</button>
+          <div id="epub-viewer"></div>
+          <button type="button" id="nextPageBtn" class="page-nav-arrow page-next" aria-label="Next Page">&#10095;</button>
+
+          <div id="ereaderStatus" class="ereader-status-overlay">
+            <div class="ereader-spinner"></div>
+            <p>Opening <em>Hemingway Falls</em> sample...</p>
+          </div>
+        </div>
+
+        <!-- Bottom Chapter Progress & iPad Home Bar -->
+        <div class="ereader-footer">
+          <span id="ereaderChapterLabel" class="ereader-chapter-label">Sample Excerpt &bull; Use arrows or swipe to turn pages</span>
+          <div class="ipad-home-bar" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jack Harper. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Non-intrusive Snow Animation Script -->
+  <script src="js/snow.js"></script>
+
+  <!-- Back to Top Floating Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    &#8679;
+  </button>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+  </script>
+
+  <!-- Floating Radio Trigger Button -->
+  <button id="radioToggle" class="radio-floating-btn" aria-label="Toggle Radio Player">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(90deg);">
+      <path d="M9 18V5l12-2v13M9 9l12-2M6 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+    Listen to Jack FM
+  </button>
+
+  <!-- Slide-out Radio Drawer Modal -->
+  <div id="radioDrawer" class="radio-drawer">
+    <div class="radio-drawer-header">
+      <h4>Jack FM Radio</h4>
+      <button id="radioClose" class="radio-close-btn" aria-label="Close Radio Drawer">&times;</button>
+    </div>
+    <div class="radio-player-container">
+      <iframe src="https://tunein.com/embed/player/s320825/" style="width:100%; height:100px;" scrolling="no" frameborder="no"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const radioToggle = document.getElementById('radioToggle');
+    const radioDrawer = document.getElementById('radioDrawer');
+    const radioClose = document.getElementById('radioClose');
+
+    radioToggle.addEventListener('click', () => {
+      radioDrawer.classList.toggle('open');
+    });
+
+    radioClose.addEventListener('click', () => {
+      radioDrawer.classList.remove('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!radioDrawer.contains(event.target) && !radioToggle.contains(event.target)) {
+        radioDrawer.classList.remove('open');
+      }
+    });
+  </script>
+
+  <!-- iPad EPUB Sample E-Reader Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const EPUB_PATH = '/assets/epubs/HemingwayFalls-Sample.epub';
+
+      const openBtn = document.getElementById('openSampleReaderBtn');
+      const modal = document.getElementById('ipadReaderModal');
+      const closeBtn = document.getElementById('closeReaderBtn');
+      const ipadScreen = document.getElementById('ipadScreen');
+      const statusOverlay = document.getElementById('ereaderStatus');
+      const tocToggleBtn = document.getElementById('tocToggleBtn');
+      const tocDrawer = document.getElementById('ereaderTocDrawer');
+      const prevBtn = document.getElementById('prevPageBtn');
+      const nextBtn = document.getElementById('nextPageBtn');
+      const fontDecBtn = document.getElementById('fontDecreaseBtn');
+      const fontIncBtn = document.getElementById('fontIncreaseBtn');
+      const swatches = document.querySelectorAll('.theme-swatch');
+      const chapterLabel = document.getElementById('ereaderChapterLabel');
+
+      let book = null;
+      let rendition = null;
+      let isInitialized = false;
+      let fontSizePercent = 105;
+
+      function initEpubReader() {
+        if (isInitialized) return;
+
+        if (typeof ePub === 'undefined') {
+          statusOverlay.innerHTML = '<p>E-reader engine is still loading. Please try again in a moment.</p>';
+          return;
+        }
+
+        isInitialized = true;
+
+        try {
+          book = ePub(EPUB_PATH);
+          rendition = book.renderTo('epub-viewer', {
+            width: '100%',
+            height: '100%',
+            spread: 'none',
+            flow: 'paginated'
+          });
+
+          // Register reading color themes inside the iframe
+          rendition.themes.register('paper', {
+            body: {
+              background: '#fbf8f1 !important',
+              color: '#1e293b !important',
+              'font-family': "'Old Standard TT', Georgia, serif !important",
+              'line-height': '1.75 !important',
+              padding: '12px 16px !important'
+            }
+          });
+          rendition.themes.register('sepia', {
+            body: {
+              background: '#f4ecd8 !important',
+              color: '#3b2f2f !important',
+              'font-family': "'Old Standard TT', Georgia, serif !important",
+              'line-height': '1.75 !important',
+              padding: '12px 16px !important'
+            }
+          });
+          rendition.themes.register('night', {
+            body: {
+              background: '#0f172a !important',
+              color: '#e2e8f0 !important',
+              'font-family': "'Old Standard TT', Georgia, serif !important",
+              'line-height': '1.75 !important',
+              padding: '12px 16px !important'
+            }
+          });
+
+          rendition.themes.select('paper');
+          rendition.themes.fontSize(fontSizePercent + '%');
+
+          rendition.display().then(() => {
+            statusOverlay.style.display = 'none';
+          }).catch((err) => {
+            console.error('EPUB render error:', err);
+            statusOverlay.innerHTML = '<p>Unable to load sample EPUB. If previewing locally, open via a local web server or your live site.</p>';
+          });
+
+          // Populate Table of Contents
+          book.loaded.navigation.then((nav) => {
+            tocDrawer.innerHTML = '';
+            if (!nav || !nav.toc || nav.toc.length === 0) {
+              tocDrawer.innerHTML = '<div class="toc-item-btn">Sample Excerpt</div>';
+              return;
+            }
+            nav.toc.forEach((chapter) => {
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'toc-item-btn';
+              btn.textContent = chapter.label.trim();
+              btn.addEventListener('click', () => {
+                rendition.display(chapter.href);
+                tocDrawer.classList.remove('open');
+              });
+              tocDrawer.appendChild(btn);
+            });
+          });
+
+          // Update bottom chapter label on page turn
+          rendition.on('relocated', (location) => {
+            if (location && location.start && book.navigation) {
+              const navItem = book.navigation.get(location.start.href);
+              if (navItem && navItem.label) {
+                chapterLabel.textContent = navItem.label.trim();
+              }
+            }
+          });
+
+          // Support keyboard & touch swipe inside EPUB iframe
+          rendition.on('keyup', handleKeyNav);
+          let touchStartX = 0;
+          rendition.on('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          });
+          rendition.on('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 40) {
+              diff > 0 ? rendition.next() : rendition.prev();
+            }
+          });
+        } catch (error) {
+          console.error('EPUB initialization error:', error);
+          statusOverlay.innerHTML = '<p>Could not initialize e-reader for <code>' + EPUB_PATH + '</code>.</p>';
+        }
+      }
+
+      function openModal() {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        initEpubReader();
+        if (rendition) {
+          setTimeout(() => rendition.resize(), 120);
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        tocDrawer.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function handleKeyNav(e) {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight' && rendition) rendition.next();
+        if (e.key === 'ArrowLeft' && rendition) rendition.prev();
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      // Clicking outside the iPad chassis closes modal
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', handleKeyNav);
+
+      prevBtn.addEventListener('click', () => {
+        if (rendition) rendition.prev();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (rendition) rendition.next();
+      });
+
+      tocToggleBtn.addEventListener('click', () => {
+        tocDrawer.classList.toggle('open');
+      });
+
+      fontDecBtn.addEventListener('click', () => {
+        if (!rendition) return;
+        fontSizePercent = Math.max(80, fontSizePercent - 10);
+        rendition.themes.fontSize(fontSizePercent + '%');
+      });
+
+      fontIncBtn.addEventListener('click', () => {
+        if (!rendition) return;
+        fontSizePercent = Math.min(160, fontSizePercent + 10);
+        rendition.themes.fontSize(fontSizePercent + '%');
+      });
+
+      swatches.forEach((swatch) => {
+        swatch.addEventListener('click', () => {
+          const theme = swatch.dataset.theme;
+          swatches.forEach((s) => s.classList.remove('active'));
+          swatch.classList.add('active');
+
+          ipadScreen.classList.remove('theme-sepia', 'theme-night');
+          if (theme === 'sepia') ipadScreen.classList.add('theme-sepia');
+          if (theme === 'night') ipadScreen.classList.add('theme-night');
+
+          if (rendition) {
+            rendition.themes.select(theme);
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (rendition && modal.classList.contains('open')) {
+          rendition.resize();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
